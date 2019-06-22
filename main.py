@@ -9,7 +9,7 @@ import glob
 
 files = glob.glob('output/*.png')
 for f in files:
-   os.remove(f)
+	os.remove(f)
 
 from sort import *
 tracker = Sort()
@@ -229,11 +229,11 @@ while True:
 	# increase frame index
 	frameIndex += 1
 
-	if frameIndex >= 4000:
-		print("[INFO] cleaning up...")
-		writer.release()
-		vs.release()
-		exit()
+	#if frameIndex >= 4000: # limits the execution to the first 4000 frames
+	#	print("[INFO] cleaning up...")
+	#	writer.release()
+	#	vs.release()
+	#	exit()
 
 # release the file pointers
 print("[INFO] cleaning up...")

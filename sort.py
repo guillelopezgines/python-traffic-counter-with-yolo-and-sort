@@ -181,6 +181,11 @@ class Sort(object):
 
     NOTE: The number of objects returned may differ from the number of detections provided.
     """
+    
+    # prevent "too many indices for array" error
+    if len(dets)==0:
+      return np.empty((0,5))
+
     self.frame_count += 1
     #get predicted locations from existing trackers.
     trks = np.zeros((len(self.trackers),5))
